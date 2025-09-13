@@ -115,14 +115,14 @@ def index():
                         Button(
                             "Extract Text",
                             type="submit",
-                            class_="btn",
+                            cls="btn",
                             style="width: 100%;"
                         )
                     ),
-                    class_="upload-area"
+                    cls="upload-area"
                 ),
                 
-                class_="container"
+                cls="container"
             )
         )
     )
@@ -139,7 +139,7 @@ def upload_file():
                     Div(
                         H1("Error"),
                         P("No file uploaded"),
-                        A("Back to Upload", href="/", class_="btn")
+                        A("Back to Upload", href="/", cls="btn")
                     )
                 )
             )
@@ -160,8 +160,8 @@ def upload_file():
             ),
             Body(
                 Div(
-                    H1("Processing File...", class_="loading"),
-                    P("Please wait while we extract text from your file", class_="loading"),
+                    H1("Processing File...", cls="loading"),
+                    P("Please wait while we extract text from your file", cls="loading"),
                     Div(
                         style="width: 50px; height: 50px; border: 5px solid #f3f3f3; border-top: 5px solid #007bff; border-radius: 50%; animation: spin 1s linear infinite; margin: 20px auto;"
                     ),
@@ -208,21 +208,21 @@ def upload_file():
                         H3("Extracted Text:"),
                         Div(
                             extracted_text,
-                            class_="text-content"
+                            cls="text-content"
                         ),
-                        class_="result"
+                        cls="result"
                     ),
                     
                     Div(
-                        A("Upload Another File", href="/", class_="btn"),
+                        A("Upload Another File", href="/", cls="btn"),
                         Button(
                             "Copy Text",
                             onclick="navigator.clipboard.writeText(document.querySelector('.text-content').textContent)",
-                            class_="btn"
+                            cls="btn"
                         )
                     ),
                     
-                    class_="container"
+                    cls="container"
                 )
             )
         )
@@ -240,9 +240,9 @@ def upload_file():
             ),
             Body(
                 Div(
-                    H1("Error", class_="error"),
-                    P(f"An error occurred: {str(e)}", class_="error"),
-                    A("Back to Upload", href="/", class_="btn")
+                    H1("Error", cls="error"),
+                    P(f"An error occurred: {str(e)}", cls="error"),
+                    A("Back to Upload", href="/", cls="btn")
                 )
             )
         )
