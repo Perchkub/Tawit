@@ -100,26 +100,28 @@ def index():
                     action="/upload",
                     method="post",
                     enctype="multipart/form-data",
-                    Div(
+                    cls="upload-area",
+                    children=[
                         Div(
-                            Label("Choose File:", style="display: block; margin-bottom: 10px; font-weight: bold;"),
-                            Input(
-                                type="file",
-                                name="file",
-                                accept=".jpg,.jpeg,.png,.gif,.bmp,.pdf",
-                                required=True,
-                                style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"
+                            Div(
+                                Label("Choose File:", style="display: block; margin-bottom: 10px; font-weight: bold;"),
+                                Input(
+                                    type="file",
+                                    name="file",
+                                    accept=".jpg,.jpeg,.png,.gif,.bmp,.pdf",
+                                    required=True,
+                                    style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"
+                                ),
+                                style="margin-bottom: 20px;"
                             ),
-                            style="margin-bottom: 20px;"
-                        ),
-                        Button(
-                            "Extract Text",
-                            type="submit",
-                            cls="btn",
-                            style="width: 100%;"
+                            Button(
+                                "Extract Text",
+                                type="submit",
+                                cls="btn",
+                                style="width: 100%;"
+                            )
                         )
-                    ),
-                    cls="upload-area"
+                    ]
                 ),
                 
                 cls="container"
