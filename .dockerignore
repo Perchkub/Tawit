@@ -26,5 +26,5 @@ coverage.xml
 *.swo
 *~
 
-# Uploads directory (will be created in container)
-uploads/
+README.md
+.gitignore

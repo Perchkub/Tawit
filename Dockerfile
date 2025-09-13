@@ -4,23 +4,29 @@ FROM python:3.11-slim
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies
+# Install system dependencies including libxrender1 and other required packages
 RUN apt-get update && apt-get install -y \
     libxrender1 \
+    libpoppler-cpp-dev \
+    poppler-utils \
+    tesseract-ocr \
+    libtesseract-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements and install Python dependencies
+# Copy requirements first for better caching
 COPY requirements.txt .
+
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
-COPY main.py .
+COPY app.py .
 
-# Create uploads directory
-RUN mkdir -p uploads
-
-# Expose port 5000 (as specified in the FastHTML app)
+# Expose port 5000 (FastHTML default port)
 EXPOSE 5000
 
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+
 # Run the application
-CMD ["python", "main.py"]
+CMD ["python", "app.py"]
