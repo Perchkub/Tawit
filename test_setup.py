@@ -6,7 +6,7 @@ Test script to verify the OCR application setup
 def test_imports():
     """Test if all required modules can be imported"""
     try:
-        from fasthtml.common import *
+        from python_fasthtml.common import *
         print("✓ FastHTML imported successfully")
     except ImportError as e:
         print(f"✗ FastHTML import failed: {e}")

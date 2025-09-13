@@ -70,7 +70,7 @@ client = genai.Client(api_key=os.getenv('GOOGLE_API_KEY'))
 
 ## Technologies Used
 
-- **FastHTML**: Web framework for Python
+- **python-fasthtml**: Web framework for Python
 - **Google Gen AI SDK**: OCR and text extraction
 - **Pillow**: Image processing
 - **PyPDF2**: PDF text extraction
