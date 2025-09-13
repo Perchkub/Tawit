@@ -1,4 +1,4 @@
-from python_fasthtml.common import *
+from fasthtml.common import *
 from google import genai
 from google.genai import types
 import io
